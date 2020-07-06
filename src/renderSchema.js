@@ -39,6 +39,7 @@ function renderObject(type, options) {
     type.interfaces.forEach(interfaces =>
       printer(`* [${interfaces.name}](#${interfaces.name})`)
     )
+    printer('\n')
   }
   printer('<table>')
   printer('<thead>')
