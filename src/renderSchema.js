@@ -34,6 +34,12 @@ function renderObject(type, options) {
   if (type.description) {
     printer(`${type.description}\n`)
   }
+  if (type.kind === 'OBJECT' && type.interfaces.length > 0) {
+    printer('Implements:\n')
+    type.interfaces.forEach(interfaces =>
+      printer(`* [${interfaces.name}](#${interfaces.name})`)
+    )
+  }
   printer('<table>')
   printer('<thead>')
   printer('<tr>')
