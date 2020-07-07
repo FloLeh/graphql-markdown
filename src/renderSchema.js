@@ -37,7 +37,7 @@ function renderObject(type, options) {
   if (type.kind === 'OBJECT' && type.interfaces.length > 0) {
     printer('Implements:\n')
     type.interfaces.forEach(interfaces =>
-      printer(`* [${interfaces.name}](#${interfaces.name})`)
+      printer(`* [${interfaces.name}](#${interfaces.name.toLowerCase()})`)
     )
     printer('\n')
   }
@@ -105,7 +105,7 @@ function renderObject(type, options) {
   if (type.kind === 'INTERFACE') {
     printer('Implemented by:\n')
     type.possibleTypes.forEach(possible => {
-      printer(`* [${possible.name}](#${possible.name})`)
+      printer(`* [${possible.name}](#${possible.name.toLowerCase()})`)
     })
   }
 }
